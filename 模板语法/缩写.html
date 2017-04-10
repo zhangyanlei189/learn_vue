@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缩写</title>
+    <script src="../lib/vue.js"></script>
+    <style>
+        .intro{font-size: 14px;color: #505050;margin: 10px 0;}
+        pre{background: #f2f2f2;}
+    </style>
+</head>
+<body>
+<div>
+    <h2>--缩写--</h2>
+    <div class="intro">指令缩写</div>
+    <!-- v-bind属性缩写 -->
+    <div id="filter1" :name="attr">{{mess | toUpper}}</div>
+    <script>
+        var vm1 = new Vue({
+            el:"#filter1",
+            data:{
+                mess:"this is a dog",
+                attr:"myName"
+            },
+            filters:{
+                toUpper:function(value){
+                    if(!value){return ""};
+                    return value.toLocaleUpperCase();
+                }
+            }
+        });
+    </script>
+</div>
+</body>
+</html>
