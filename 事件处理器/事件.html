@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/vue.js"></script>
+    <link rel="stylesheet" href="../css/main.css"/>
+
+</head>
+<body>
+<div>
+    <h2>--事件--</h2>
+    <div id="s1">
+        <button v-on:click="counter+=1">点我</button>
+        <p>这个按钮被点击了 {{ counter }} 次。</p>
+    </div>
+    <script>
+        var vm1 = new Vue({
+            el:"#s1",
+            data:{
+                counter:0
+            }
+        });
+    </script>
+
+    <br/><br/><br/>
+
+    <h2>--事件处理方法--</h2>
+    <div class="intro"></div>
+    <div id="s2">
+        <button v-on:click="greet('hi',$event)">great</button>
+    </div>
+    <script>
+        var vm2 = new Vue({
+            el:"#s2",
+            data:{
+                name:"vue.js"
+            },
+            methods:{
+                greet:function(p,event){
+                    console.log(p);
+                    //console.log(this);//vm
+                    //console.log(event);//原生event
+                    // `this` 在方法里指当前 Vue 实例
+                    alert('Hello ' + this.name + '!')
+                    // `event` 是原生 DOM 事件
+                    alert(event.target.tagName)
+                }
+            }
+        });
+    </script>
+</div>
+<script type="text/javascript" smua="d=p&amp;s=l&amp;u=u2951278&amp;w=300&amp;h=250" src="http://union.star-media.cn/smu0/o.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/vue.js"></script>
+</head>
+<body>
+<div>
+    <h2>--改变样式--</h2>
+    <div id="s1" v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">this is test</div>
+    <script>
+        var vm1 = new Vue({
+            el:"#s1",
+            data:{
+                activeColor: 'red',
+                fontSize: 30
+            }
+        });
+    </script>
+
+    <br/><br/><br/>
+
+    <h2>--直接绑定样式对象--</h2>
+    <div id="s2" v-bind:style="styleObj">this is test</div>
+    <script>
+        var vm1 = new Vue({
+            el:"#s2",
+            data:{
+                styleObj:{
+                    color:"red",
+                    "font-size":"30px"
+                }
+            }
+        });
+    </script>
+
+</div>
+
+</body>
+</html>

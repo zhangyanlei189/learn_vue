@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/vue.js"></script>
+    <style>
+        .active{color: red;}
+        .font{font-weight: bold;}
+    </style>
+</head>
+<body>
+<div>
+    <h2>--对象方法改变class--</h2>
+    <div id="c1">
+        <span v-bind:class = "{active:isActive}">this is test class</span>
+    </div>
+    <script>
+        var vm1 = new Vue({
+            el:"#c1",
+            data:{
+                isActive:true
+            }
+        });
+    </script>
+
+    <br>
+    <br>
+    <br>
+
+    <h2>--对象方法改变多个class值--</h2>
+    <div id="c2">
+        <span v-bind:class = "{active:isActive,font:bold}">this is test class</span>
+    </div>
+    <script>
+        var vm2 = new Vue({
+            el:"#c2",
+            data:{
+                isActive:true,
+                bold:true
+            }
+        });
+    </script>
+
+    <br>
+    <br>
+    <br>
+
+    <h2>--对象方法改变全部class值--</h2>
+    <div id="c3">
+        <span v-bind:class = "classObj">this is test class</span>
+    </div>
+    <script>
+        var vm3 = new Vue({
+            el:"#c3",
+            data:{
+                classObj:{
+                    active:true,
+                    font:true
+                }
+            }
+        });
+    </script>
+
+</div>
+</body>
+</html>

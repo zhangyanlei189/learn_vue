@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <script src="../lib/vue.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div>
+    <h2>--基本用法-数组迭代--</h2>
+    <div class="intro">第二个参数index为循环的索引</div>
+    <div id="list1">
+        <ul>
+            <li v-for="(item,index) in items">{{item.mess}}-----{{index+1}}</li>
+        </ul>
+    </div>
+    <script>
+        var vm1 = new Vue({
+            el:"#list1",
+            data:{
+                items:[
+                    {mess:"name"},
+                    {mess:"ll"},
+                    {mess:"dga"},
+                    {mess:"trhe"}
+                ]
+            }
+        });
+    </script>
+
+    <br/><br/><br/>
+
+    <h2>--基本用法-对象遍历--</h2>
+    <div class="intro">第二个参数key为对象的键,第三个参数为索引</div>
+    <div id="list2">
+        <ul>
+            <li v-for="(value,key,index) in objs">{{value}}-----{{key}}-----{{index}}</li>
+        </ul>
+    </div>
+    <script>
+        var vm2 = new Vue({
+            el:"#list2",
+            data:{
+                objs:{
+                    name:"zyl",
+                    age:30,
+                    sex:"male",
+                    phone:"13712345678"
+                }
+            }
+        });
+    </script>
+
+    <br/><br/><br/>
+
+    <h2>--基本用法-整数迭代--</h2>
+    <div class="intro"></div>
+    <div id="list3">
+        <ul>
+            <li v-for="n in 10">{{n}}</li>
+        </ul>
+    </div>
+    <script>
+        var vm3 = new Vue({
+            el:"#list3",
+            data:{}
+        });
+    </script>
+</div>
+</body>
+</html>

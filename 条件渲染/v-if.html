@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/vue.js"></script>
+    <link rel="stylesheet" href="../css/main.css"/>
+</head>
+<body>
+<div>
+    <h2>--基本使用--</h2>
+    <div id="if1">
+        <span v-if="ok">ok</span>
+        <span v-else>no</span>
+    </div>
+    <script>
+        var vm1 = new Vue({
+            el:"#if1",
+            data:{
+                ok:false
+            }
+        });
+    </script>
+
+    <br/><br/><br/>
+
+    <h2>--包含多个语句--</h2>
+    <div id="if2">
+        <template v-if="ok">
+            <div>包含多个元素true</div>
+            <div>条件true</div>
+            <div>true</div>
+        </template>
+        <template v-else>
+            <div>包含多个元素false</div>
+            <div>条件false</div>
+            <div>false</div>
+        </template>
+    </div>
+    <script>
+        var vm2 = new Vue({
+            el:"#if2",
+            data:{
+                ok:false
+            }
+        });
+    </script>
+
+    <br/><br/><br/>
+
+    <h2>--else if--</h2>
+    <div id="elseif1">
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <div v-else>
+            Not A/B/C
+        </div>
+    </div>
+    <script>
+        var vm3 = new Vue({
+            el:"#elseif1",
+            data:{
+                type:"A"
+            }
+        });
+    </script>
+
+    <br/><br/><br/>
+
+    <h2>-- v-show --</h2>
+    <div class="intro">注意:v-show的袁术始终会被渲染并保留在DOM中，只是改变了display。v-show 不支持 &lt;template&gt; 语法，也不支持 v-else。</div>
+    <div id="show" v-show = "show">测试v-show</div>
+    <script>
+        var vm4 = new Vue({
+            el:"#show",
+            data:{
+                show:true
+            }
+        });
+    </script>
+
+</div>
+</body>
+</html>
