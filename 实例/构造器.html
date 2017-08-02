@@ -11,7 +11,10 @@
         a:"test"
     };
     var vm = new Vue({
-        data:data
+        data:data,
+        created:function(){
+            console.log("这里执行钩子");
+        }
     });
     console.log(vm.a);//test
 

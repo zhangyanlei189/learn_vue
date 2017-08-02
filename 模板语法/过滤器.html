@@ -13,7 +13,7 @@
 <div>
     <h2>--过滤器--</h2>
     <div class="intro">Vue.js 允许你自定义过滤器，可被用作一些常见的文本格式化。过滤器可以用在两个地方：mustache 插值和 v-bind 表达式。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示：</div>
-    <div id="filter1">{{mess | toUpper}}</div>
+    <div id="filter1">{{mess | toUpper($el)}}</div>
     <script>
         var vm1 = new Vue({
             el:"#filter1",
@@ -21,7 +21,8 @@
                 mess:"this is a dog"
             },
             filters:{
-                toUpper:function(value){
+                toUpper:function(value,t){
+                    console.log(t);
                     if(!value){return ""};
                     return value.toLocaleUpperCase();
                 }
@@ -29,5 +30,6 @@
         });
     </script>
 </div>
+<div style="font-size: 14px;color: red;margin-top: 10px;">注意：过滤器主要用做文本转换。只能用在{{}}表达式和v-bind中，其他指令使用<span style="color: blue;">计算属性</span></div>
 </body>
 </html>

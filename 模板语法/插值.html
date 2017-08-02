@@ -37,12 +37,18 @@
     <br>
     <br>
     <h2>--属性--</h2>
-    <div id="attr" v-bind:name="attr"></div>
+    <div id="attr">
+        <div v-bind:name="attr"></div>
+        <button v-bind:disabled="isButtonDisabled" v-bind:name="isDel">Button</button>
+    </div>
+
     <script>
         var vm3 = new Vue({
             el:"#attr",
             data:{
-                attr:"myname"
+                attr:"myname",
+                isButtonDisabled:true,
+                isDel:false
             }
         });
     </script>
@@ -54,14 +60,17 @@
         <span>{{number+1}}</span><br>
         <span>{{number?'yes':'no'}}</span><br>
         <span>{{str.split('').reverse().join("")}}</span><br>
-        <span>{{Math.random()}}</span>
+        <span>{{Math.random()}}</span><br>
+        <span>{{new Date()}}</span><br>
+        <span v-if="i">这里显示</span>
     </div>
     <script>
         var vm4 = new Vue({
             el:"#express1",
             data:{
                 number:0,
-                str:"world"
+                str:"world",
+                i:true
             }
         });
     </script>

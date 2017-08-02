@@ -24,6 +24,28 @@
 
     <br/><br/><br/>
 
+    <h2>--基本使用2--</h2>
+    <div id="if3">
+        <div v-if="ok">
+            <div>这是第一个true</div>
+            <div>这是第2个true</div>
+        </div>
+        <div v-else>
+            <div>这是第一个false</div>
+            <div>这是第二个false</div>
+        </div>
+    </div>
+    <script>
+        var vm1 = new Vue({
+            el:"#if3",
+            data:{
+                ok:false
+            }
+        });
+    </script>
+
+    <br/><br/><br/>
+
     <h2>--包含多个语句--</h2>
     <div id="if2">
         <template v-if="ok">
@@ -41,7 +63,7 @@
         var vm2 = new Vue({
             el:"#if2",
             data:{
-                ok:false
+                ok:true
             }
         });
     </script>

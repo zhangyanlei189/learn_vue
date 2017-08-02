@@ -46,6 +46,25 @@
     <br>
     <br>
 
+
+    <h2>--数组的方法改变多个class值--</h2>
+    <div id="c4">
+        <span v-bind:class = "[a,f]">this is test class</span>
+    </div>
+    <script>
+        var vm2 = new Vue({
+            el:"#c4",
+            data:{
+                a:"active",
+                f:"font"
+            }
+        });
+    </script>
+
+    <br>
+    <br>
+    <br>
+
     <h2>--对象方法改变全部class值--</h2>
     <div id="c3">
         <span v-bind:class = "classObj">this is test class</span>
