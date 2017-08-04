@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/vue.js"></script>
+    <link rel="stylesheet" href="../css/main.css"/>
+</head>
+<body>
+<div id="e1">
+    <button v-on:click="a">第一个按钮</button>
+</div>
+<script>
+    new Vue({
+        el:"#e1",
+        methods:{
+            a:function(event){
+                console.log(event.target);
+            }
+        }
+    });
+</script>
+<br/><br/><br/>
+***********************
+<br/><br/><br/>
+<div id="e2">
+    <button v-on:click="b('m',$event)">第二个按钮</button>
+</div>
+<script>
+    new Vue({
+        el:"#e2",
+        methods:{
+            b:function(param,e){
+                console.log(param);
+                console.log(e.target);
+            }
+        }
+    });
+</script>
+<br/><br/><br/>
+</body>
+</html>
