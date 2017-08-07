@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/vue.js"></script>
+</head>
+<body>
+<div id="e1">
+    <table>
+        <tr is="my-tr">
+
+        </tr>
+    </table>
+</div>
+<script>
+    new Vue({
+        el:"#e1",
+        components:{
+            'my-tr':{
+                template:"<tr><td>test1</td><td>test2</td></tr>"
+            }
+        }
+    });
+</script>
+<!--<br/><br/>
+ -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
+<br/><br/>
+data不为函数时报错
+<div id="e2">
+
+</div>
+<script>
+    Vue.component('my-component', {
+        template: '<span>{{ message }}</span>',
+        data: {
+            message: 'hello' //错误，此处应为函数
+        }
+    })
+    new Vue({
+        el:"#e2"
+    });
+</script>-->
+<br/><br/>
+---------------------------------------------------------
+<br/><br/>
+data需为函数
+<div id="e3">
+    <my-component></my-component>
+    <my-component></my-component>
+    <my-component></my-component>
+</div>
+<script>
+    Vue.component('my-component', {
+        template: '<div v-on:click = "counter+=1">{{ counter }}</div>',
+        data: function(){
+            return {counter:0}
+        }
+    })
+    new Vue({
+        el:"#e3"
+    });
+</script>
+</body>
+</html>
