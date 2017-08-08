@@ -7,7 +7,9 @@
 </head>
 <body>
 <div id="e1">
-    <child message="hello!"></child>
+    <input v-model="parentMsg">
+    <br>
+    <child v-bind:message="parentMsg"></child>
 </div>
 <script>
     Vue.component('child', {
@@ -18,7 +20,10 @@
         template: '<span>{{ message }}</span>'
     })
     new Vue({
-        el:"#e1"
+        el:"#e1",
+        data:{
+            parentMsg:"a"
+        }
     });
 </script>
 </body>
